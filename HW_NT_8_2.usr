@@ -26,7 +26,6 @@ ScriptLocale=ru-RU
 vuser_init=vuser_init.c
 logic=logic.c
 createTicket=createTicket.c
-checkAndDel=checkAndDel.c
 vuser_end=vuser_end.c
 [RunLogicFiles]
 Default Profile=default.usp
@@ -40,30 +39,26 @@ globals.h=
 vuser_init=1
 logic=1
 createTicket=1
-checkAndDel=1
 vuser_end=1
 [Recorded Actions]
 vuser_init=0
 logic=0
 createTicket=0
-checkAndDel=1
 vuser_end=0
 [Replayed Actions]
 vuser_init=1
 logic=1
 createTicket=1
-checkAndDel=1
 vuser_end=1
 [Interpreters]
 vuser_init=cci
 logic=cci
 createTicket=cci
-checkAndDel=cci
 vuser_end=cci
 [TransactionsOrder]
 Order=
 [StateManagement]
-LastReplayStatus=1
+LastReplayStatus=2
 [ActiveReplay]
 LastReplayedRunName=result1
 ActiveRunName=result1

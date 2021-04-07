@@ -26,8 +26,8 @@ Registry settings:
 			DetectApplicationCrashDetectable	true
 			DetectZeroEventNeedDetect	true
 			DetectApplicationCrashEnableDetect	true
-			EnableCancelButton	true
 			DetectZeroEventInterval	180
+			EnableCancelButton	true
 	JS Options
 		JSComRecordingSupport	false
 	Protocol Options

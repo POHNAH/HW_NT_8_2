@@ -7,7 +7,7 @@ Registry settings:
 		default	yes
 	AUT
 		(Default)	
-		default	C:\Program Files\Internet Explorer\IEXPLORE.EXE http://localhost:1080/webtours/
+		default	C:\Program Files (x86)\Internet Explorer\iexplore.exe http://localhost:1080/webtours/
 	DebugFilter
 		(Default)	
 		default	off
@@ -151,7 +151,7 @@ Registry settings:
 	GenerateDebugLogFile
 	LocalMachineIdentity
 		(Default)	
-		default	VolkovAI-book
+		default	5CD934BYJK
 	NumberOfOutputByteArrayElementsToShow
 		(Default)	-1
 	RecorderDir
@@ -166,7 +166,7 @@ Registry settings:
 		default	false
 	TestDir
 		(Default)	
-		default	C:\Users\WolF\Desktop\อา\HW\HW_NT_5_2\data\
+		default	C:\Users\User\Desktop\Scripts\HW_NT_8_2\data\
 	TrapOnClient
 		default	true
 	TrapOnMainThreadOnly
