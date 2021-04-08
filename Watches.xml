@@ -1,6 +1,5 @@
 ﻿<Properties>
-  <WatchEntry0 value="randomUser3" />
-  <WatchEntry1 value="randomUser2" />
-  <WatchEntry2 value="randomUser1" />
-  <WatchEntry3 value="j" />
+  <WatchEntry0 value="token" />
+  <WatchEntry1 value="paramName" />
+  <WatchEntry2 value="price" />
 </Properties>

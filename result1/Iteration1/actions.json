@@ -6,19 +6,43 @@
                 "stepId": "STEP1",
                 "stepName": "Url: webtours",
                 "infFile": "t1.inf",
-                "time": 1617823482131
+                "time": 1617890558419
             },
             {
                 "stepId": "STEP2",
                 "stepName": "Submit Form: login.pl",
                 "infFile": "t2.inf",
-                "time": 1617823482320
+                "time": 1617890558836
             },
             {
                 "stepId": "STEP3",
                 "stepName": "Url: welcome.pl",
                 "infFile": "t3.inf",
-                "time": 1617823482459
+                "time": 1617890559300
+            },
+            {
+                "stepId": "STEP4",
+                "stepName": "Submit Form: reservations.pl",
+                "infFile": "t4.inf",
+                "time": 1617890559556
+            },
+            {
+                "stepId": "STEP5",
+                "stepName": "Submit Form: reservations.pl_2",
+                "infFile": "t5.inf",
+                "time": 1617890559806
+            },
+            {
+                "stepId": "STEP6",
+                "stepName": "Submit Form: reservations.pl_3",
+                "infFile": "t6.inf",
+                "time": 1617890560096
+            },
+            {
+                "stepId": "STEP7",
+                "stepName": "Url: SignOff Button",
+                "infFile": "t7.inf",
+                "time": 1617890560609
             }
         ],
         "transactions": []
