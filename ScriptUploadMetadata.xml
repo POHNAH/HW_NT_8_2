@@ -4,7 +4,6 @@
   <Protocol>Web - HTTP/HTML</Protocol>
   <ActionFiles>
     <FileEntry Name="vuser_init.c" Filter="2" />
-    <FileEntry Name="logic.c" Filter="2" />
     <FileEntry Name="createTicket.c" Filter="2" />
     <FileEntry Name="vuser_end.c" Filter="2" />
   </ActionFiles>
