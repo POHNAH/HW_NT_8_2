@@ -5,6 +5,9 @@ createTicket()
     char separators[] = ";";
     char *token;
 
+	tName = "8.2.01.Choice_City";
+	lr_start_transaction(tName);
+	
     randomNumber = rand()%2;
 
 	web_url("welcome.pl", 
@@ -16,12 +19,18 @@ createTicket()
 		"Mode=HTML", 
 		LAST);
 
+	end_transaction(tName, status);
+	lr_think_time(4);
+
 	lr_save_string(lr_eval_string("{seatPref}"),"sPref");
 //	lr_output_message(lr_eval_string("{sPref}"));
 	lr_save_string(lr_eval_string("{seatType}"),"sType");
 //	lr_output_message(lr_eval_string("{sType}"));
 	
 	if (randomNumber == 0) {
+		tName = "8.1.02.Choice_Flight";
+		lr_start_transaction(tName);
+
 		web_reg_save_param_ex(
 		    "ParamName=outFlight", 
 		    "LB/IC=name=\"outboundFlight\" value=\"",
@@ -43,6 +52,12 @@ createTicket()
 			"Name=findFlights.y", "Value=11", ENDITEM, 
 			LAST);
 			
+		end_transaction(tName, status);
+		lr_think_time(4);
+
+		tName = "8.2.03.Choice_Flight";
+		lr_start_transaction(tName);
+
 		count = atoi(lr_eval_string("{outFlight_count}"));
 		
 		k = 0;
@@ -80,6 +95,12 @@ createTicket()
 			"Name=reserveFlights.y", "Value=10", ENDITEM, 
 			LAST);
 	
+		end_transaction(tName, status);
+		lr_think_time(4);
+
+		tName = "8.2.04.End_Booking";
+		lr_start_transaction(tName);
+
 		lr_save_string(lr_eval_string("{fName}"),"firstName");
 //		lr_output_message(lr_eval_string("{firstName}"));
 		lr_save_string(lr_eval_string("{sName}"),"secondName");
@@ -106,8 +127,14 @@ createTicket()
 			"Name=buyFlights.y", "Value=14", ENDITEM, 
 			LAST);
 		
+		end_transaction(tName, status);
+		lr_think_time(4);
+
 	}
 	else {
+		tName = "8.1.02.Choice_Flight";
+		lr_start_transaction(tName);
+
 		web_reg_save_param_ex(
 		    "ParamName=outFlight", 
 		    "LB/IC=name=\"outboundFlight\" value=\"",
@@ -135,34 +162,40 @@ createTicket()
 			"Name=findFlights.y", "Value=11", ENDITEM, 
 			LAST);
 		
-	count = atoi(lr_eval_string("{outFlight_count}"));
-	
-	k = 0;
-	for (i = 1; i <= count; i++) {
-		sprintf(paramName, "{outFlight_%d}", i);
+		end_transaction(tName, status);
+		lr_think_time(4);
+
+		tName = "8.2.03.Choice_Flight";
+		lr_start_transaction(tName);
+
+		count = atoi(lr_eval_string("{outFlight_count}"));
 		
-	    token = (char *)strtok(lr_eval_string(paramName), separators);
-		token[strlen(token) - 1] = 0;
-		token = (char *)strtok(NULL, separators);
-		price = atoi(token);
-
-//		lr_output_message("Цена рейса %s равна: %d", lr_eval_string(paramName), price);
-
-   		if (price % 2 == 0) {
-			k = 1;
-			break;
-   		}
-	}
+		k = 0;
+		for (i = 1; i <= count; i++) {
+			sprintf(paramName, "{outFlight_%d}", i);
+			
+		    token = (char *)strtok(lr_eval_string(paramName), separators);
+			token[strlen(token) - 1] = 0;
+			token = (char *)strtok(NULL, separators);
+			price = atoi(token);
 	
-	if (k == 0) {
-		lr_output_message("Нет рейсов с четной ценой. Билет не создан.");
-		return 0;
-	}
-	else {
-		sprintf(paramName, "{outFlight_%d}", i);
-		lr_param_sprintf("outF", lr_eval_string(paramName));
-//		lr_output_message("Выбран рейс %s", lr_eval_string("{outF}"));
-	}
+	//		lr_output_message("Цена рейса %s равна: %d", lr_eval_string(paramName), price);
+	
+	   		if (price % 2 == 0) {
+				k = 1;
+				break;
+	   		}
+		}
+		
+		if (k == 0) {
+			lr_output_message("Нет рейсов с четной ценой. Билет не создан.");
+			return 0;
+		}
+		else {
+			sprintf(paramName, "{outFlight_%d}", i);
+			lr_param_sprintf("outF", lr_eval_string(paramName));
+	//		lr_output_message("Выбран рейс %s", lr_eval_string("{outF}"));
+		}
 		lr_save_string(lr_eval_string(lr_paramarr_random("returnFlight")),"randomTicket2");
 //		lr_output_message(lr_eval_string("{randomTicket2}"));
 	
@@ -175,6 +208,12 @@ createTicket()
 			"Name=reserveFlights.y", "Value=10", ENDITEM, 
 			LAST);
 	
+		end_transaction(tName, status);
+		lr_think_time(4);
+
+		tName = "8.2.04.End_Booking";
+		lr_start_transaction(tName);
+
 		lr_save_string(lr_eval_string("{fName}"),"firstName");
 //		lr_output_message(lr_eval_string("{firstName}"));
 		lr_save_string(lr_eval_string("{sName}"),"secondName");
@@ -200,6 +239,10 @@ createTicket()
 			"Name=buyFlights.x", "Value=49", ENDITEM, 
 			"Name=buyFlights.y", "Value=14", ENDITEM, 
 			LAST);
+		
+		end_transaction(tName, status);
+		lr_think_time(4);
+
 	}
 	
 	return 0;
