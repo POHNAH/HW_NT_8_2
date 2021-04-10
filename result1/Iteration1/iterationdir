@@ -1,2 +1,6 @@
-[logic]
-SnapshotIndex=I1_logic
+[vuser_init]
+SnapshotIndex=I1_vuser_init
+[createTicket]
+SnapshotIndex=I1_createTicket
+[vuser_end]
+SnapshotIndex=I1_vuser_end

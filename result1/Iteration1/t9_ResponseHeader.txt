@@ -1,0 +1,10 @@
+HTTP/1.1 200 OK
+Date: Sat, 10 Apr 2021 00:54:51 GMT
+Server: Apache/2.2.21 (Win32)
+Expires: Fri, 09 Apr 2021 00:54:52 GMT
+Set-Cookie: MTUserInfo=firstName&Jen&username&Jen&address2&Jenkins%20City&hash&78&expDate&02%2F23&creditCard&2222&address1&Jenkins%20Town&lastName&Jenkins%0A; path=/
+Keep-Alive: timeout=5, max=93
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=ISO-8859-1
+

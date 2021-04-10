@@ -10,7 +10,7 @@ createTicket()
 	
     randomNumber = rand()%2;
 
-	web_url("welcome.pl", 
+	status = web_url("welcome.pl", 
 		"URL=http://localhost:1080/cgi-bin/welcome.pl?page=search", 
 		"Resource=0", 
 		"RecContentType=text/html", 
@@ -37,8 +37,14 @@ createTicket()
 		    "RB/IC=\"",
 		    "Ordinal=all");
 	
-		web_submit_form("reservations.pl", 
+		status = web_submit_data("reservations.pl", 
+			"Action=http://localhost:1080/cgi-bin/reservations.pl", 
+			"Method=POST", 
+			"TargetFrame=", 
+			"RecContentType=text/html", 
+			"Referer=http://localhost:1080/cgi-bin/reservations.pl?page=welcome", 
 			"Snapshot=t4.inf", 
+			"Mode=HTML", 
 			ITEMDATA, 
 			"Name=depart", "Value={city}", ENDITEM, 
 			"Name=departDate", "Value={date1}", ENDITEM, 
@@ -87,8 +93,14 @@ createTicket()
 //			lr_output_message("Выбран рейс %s", lr_eval_string("{outF}"));
 		}
 		
-		web_submit_form("reservations.pl_2", 
+		status = web_submit_data("reservations.pl_2", 
+			"Action=http://localhost:1080/cgi-bin/reservations.pl", 
+			"Method=POST", 
+			"TargetFrame=", 
+			"RecContentType=text/html", 
+			"Referer=http://localhost:1080/cgi-bin/reservations.pl", 
 			"Snapshot=t5.inf", 
+			"Mode=HTML", 
 			ITEMDATA, 
 			"Name=outboundFlight", "Value={outF}", ENDITEM, 
 			"Name=reserveFlights.x", "Value=3", ENDITEM, 
@@ -112,8 +124,14 @@ createTicket()
 		lr_save_string(lr_eval_string("{cDate}"),"creditDate");
 //		lr_output_message("Credit card %s, %s", lr_eval_string("{creditCard}"),lr_eval_string("{creditDate}"));
 	
-		web_submit_form("reservations.pl_3", 
+		status = web_submit_data("reservations.pl_3", 
+			"Action=http://localhost:1080/cgi-bin/reservations.pl", 
+			"Method=POST", 
+			"TargetFrame=", 
+			"RecContentType=text/html", 
+			"Referer=http://localhost:1080/cgi-bin/reservations.pl", 
 			"Snapshot=t6.inf", 
+			"Mode=HTML", 
 			ITEMDATA, 
 			"Name=firstName", "Value={firstName}", ENDITEM, 
 			"Name=lastName", "Value={secondName}", ENDITEM, 
@@ -147,8 +165,14 @@ createTicket()
 		    "RB/IC=\"",
 		    "Ordinal=all");
 		
-		web_submit_form("reservations.pl", 
+		status = web_submit_data("reservations.pl", 
+			"Action=http://localhost:1080/cgi-bin/reservations.pl", 
+			"Method=POST", 
+			"TargetFrame=", 
+			"RecContentType=text/html", 
+			"Referer=http://localhost:1080/cgi-bin/reservations.pl?page=welcome", 
 			"Snapshot=t4.inf", 
+			"Mode=HTML", 
 			ITEMDATA, 
 			"Name=depart", "Value={city}", ENDITEM, 
 			"Name=departDate", "Value={date1}", ENDITEM, 
@@ -199,8 +223,14 @@ createTicket()
 		lr_save_string(lr_eval_string(lr_paramarr_random("returnFlight")),"randomTicket2");
 //		lr_output_message(lr_eval_string("{randomTicket2}"));
 	
-		web_submit_form("reservations.pl_2", 
+		status = web_submit_data("reservations.pl_2", 
+			"Action=http://localhost:1080/cgi-bin/reservations.pl", 
+			"Method=POST", 
+			"TargetFrame=", 
+			"RecContentType=text/html", 
+			"Referer=http://localhost:1080/cgi-bin/reservations.pl", 
 			"Snapshot=t5.inf", 
+			"Mode=HTML", 
 			ITEMDATA, 
 			"Name=outboundFlight", "Value={outF}", ENDITEM, 
 			"Name=returnFlight", "Value={randomTicket2}", ENDITEM, 
@@ -225,8 +255,14 @@ createTicket()
 		lr_save_string(lr_eval_string("{cDate}"),"creditDate");
 //		lr_output_message("Credit card %s, %s", lr_eval_string("{creditCard}"),lr_eval_string("{creditDate}"));
 	
-		web_submit_form("reservations.pl_3", 
+		status = web_submit_data("reservations.pl_3", 
+			"Action=http://localhost:1080/cgi-bin/reservations.pl", 
+			"Method=POST", 
+			"TargetFrame=", 
+			"RecContentType=text/html", 
+			"Referer=http://localhost:1080/cgi-bin/reservations.pl", 
 			"Snapshot=t6.inf", 
+			"Mode=HTML", 
 			ITEMDATA, 
 			"Name=firstName", "Value={firstName}", ENDITEM, 
 			"Name=lastName", "Value={secondName}", ENDITEM, 
