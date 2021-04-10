@@ -28,7 +28,7 @@ createTicket()
 //	lr_output_message(lr_eval_string("{sType}"));
 	
 	if (randomNumber == 0) {
-		tName = "8.1.02.Choice_Flight";
+		tName = "8.2.02.Choice_Flight";
 		lr_start_transaction(tName);
 
 		web_reg_save_param_ex(
